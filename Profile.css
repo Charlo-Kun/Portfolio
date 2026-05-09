@@ -4,11 +4,6 @@
     box-sizing:border-box;
 }
 
-body{
-    background: var(--primary-color);
-    font-family:sans-serif;
-}
-
 :root{
     --primary-color:#edf2fc;
     --secondary-color:#212121;
@@ -27,8 +22,16 @@ body{
     --logo:#edf2fc;
 }
 
+body{
+    background:var(--primary-color);
+    font-family:sans-serif;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
 #navbar{
-    background-color:var(--primary-color);
+    background:var(--primary-color);
     border-bottom:5px dotted var(--secondary-color);
 }
 
@@ -36,11 +39,14 @@ body{
     width:70px;
     background:var(--logo);
     border-radius:5px;
+    padding:2px;
 }
 
 .nav-link{
     color:var(--secondary-color);
+    font-family:'Times New Roman';
     font-weight:bold;
+    margin-left:15px;
 }
 
 .nav-link:hover{
@@ -50,40 +56,124 @@ body{
 #icon{
     width:30px;
     cursor:pointer;
+    margin-left:20px;
+}
+
+/* HERO SECTION */
+
+#welcome-section{
+    padding-top:120px;
+    min-height:100vh;
 }
 
 .info{
-    border:1px solid var(--secondary-color);
+    border:1px solid var(--third-color);
+    padding:30px;
     border-radius:10px;
 }
 
 .info h1{
+    font-size:50px;
     color:var(--third-color);
-    font-size:3rem;
+    margin-bottom:20px;
+    font-family:'Times New Roman';
 }
 
 .info p{
     color:var(--third-color);
+    line-height:28px;
+    margin-bottom:40px;
+    font-family:'Times New Roman';
+    font-weight:bold;
 }
 
 .info span{
     color:var(--secondary-color);
 }
 
+.info a{
+    background:var(--secondary-color);
+    color:var(--primary-color);
+    padding:12px 25px;
+    text-decoration:none;
+    border-radius:5px;
+    font-family:'Times New Roman';
+}
+
+/* IMAGE ANIMATION */
+
+.img-box{
+    position:relative;
+    width:100%;
+    max-width:450px;
+    height:500px;
+    margin:auto;
+}
+
+.img-box img{
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform:translateX(-50%);
+    transition:bottom 1s,left 1s;
+}
+
+.back-img{
+    width:100%;
+    height:auto;
+}
+
+.main{
+    width:80%;
+    height:auto;
+}
+
+.img-box:hover .back-img{
+    bottom:50px;
+}
+
+.img-box:hover .main{
+    left:10px;
+}
+
+/* PROJECTS */
+
+#projects{
+    padding:80px 0;
+}
+
+h3{
+    color:var(--secondary-color);
+    margin-bottom:50px;
+    font-family:'Times New Roman';
+    text-align:center;
+    font-size:40px;
+}
+
 .project-tile{
     background:var(--fifth-color);
     padding:20px;
     border-radius:10px;
+    opacity:0.7;
     transition:0.3s;
+    height:100%;
 }
 
 .project-tile:hover{
+    opacity:1;
     transform:translateY(-5px);
+}
+
+.tiles{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:15px;
 }
 
 .project-link{
     text-decoration:none;
     color:var(--primary-color);
+    font-family:'Times New Roman';
     font-weight:bold;
 }
 
@@ -91,34 +181,26 @@ body{
     color:#ffa31a;
 }
 
-.tiles{
-    width:100%;
-    border-radius:10px;
-}
-
-.img-box{
-    position:relative;
-    width:100%;
-    max-width:400px;
-}
-
-.back-img{
-    width:100%;
-}
-
-.main{
-    position:absolute;
-    left:50%;
-    bottom:0;
-    transform:translateX(-50%);
-    width:80%;
-}
+/* FOOTER */
 
 footer{
+    padding:30px;
+    text-align:center;
     background:var(--primary-color);
 }
 
-footer a{
+footer ul{
+    list-style:none;
+    padding:0;
+    margin-bottom:20px;
+}
+
+footer ul li{
+    display:inline-block;
+    margin:0 10px;
+}
+
+footer ul li a{
     text-decoration:none;
     color:var(--secondary-color);
 }
@@ -127,54 +209,37 @@ footer span{
     color:var(--third-color);
 }
 
+/* RESPONSIVE */
+
 @media(max-width:768px){
 
     .info{
         text-align:center;
+        margin-bottom:50px;
     }
 
     .info h1{
-        font-size:2rem;
+        font-size:32px;
+    }
+
+    .info p{
+        font-size:15px;
     }
 
     .img-box{
-        margin-top:40px;
+        height:350px;
     }
 
-    .img-box{
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-    height: 500px;
-    margin: auto;
-}
+    .img-box:hover .main{
+        left:50%;
+    }
 
-.img-box img{
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    transition: 0.8s;
-}
+    h3{
+        font-size:28px;
+    }
 
-/* Background image */
-.back-img{
-    width: 100%;
-    z-index: 1;
-}
+    #icon{
+        margin-top:10px;
+    }
 
-/* Front image */
-.main{
-    width: 80%;
-    z-index: 2;
-}
-
-/* Hover Effects */
-.img-box:hover .back-img{
-    bottom: 40px;
-}
-
-.img-box:hover .main{
-    left: 45%;
-}
 }
