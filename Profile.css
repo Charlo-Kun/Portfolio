@@ -140,4 +140,41 @@ footer span{
     .img-box{
         margin-top:40px;
     }
+
+    .img-box{
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 500px;
+    margin: auto;
+}
+
+.img-box img{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    transition: 0.8s;
+}
+
+/* Background image */
+.back-img{
+    width: 100%;
+    z-index: 1;
+}
+
+/* Front image */
+.main{
+    width: 80%;
+    z-index: 2;
+}
+
+/* Hover Effects */
+.img-box:hover .back-img{
+    bottom: 40px;
+}
+
+.img-box:hover .main{
+    left: 45%;
+}
 }
